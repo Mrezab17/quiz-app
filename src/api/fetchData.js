@@ -5,7 +5,7 @@ export const fetchData = async () => {
   const response = await axios
     .get(baseUrl)
     .then((res) => {
-      return res;
+      return res.data;
     })
     .catch((err) => console.log(err));
 
