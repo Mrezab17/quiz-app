@@ -1,10 +1,14 @@
-import Content from "./components/Content";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
+
+import Navigator from "./components/Navigator";
 
 const App = () => {
   return (
-    <>
-      <Content />
-    </>
+    <QueryClientProvider client={queryClient}>
+      <Navigator />
+    </QueryClientProvider>
   );
 };
 

@@ -534,8 +534,28 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-@tailwind utilities @tailwind utilities @layer base {
-  html {
-    font-family: 'BBadr';
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
+.bg-spiderman {
+  background-image: url('./src/assets/spiderman.jpg');
+}
+
+.bg-center {
+  background-position: center;
+}
+
+@media (min-width: 640px) {
+  .sm\:bg-cover {
+    background-size: cover;
   }
 }
