@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       colors: { primary: "#252422", secondary: "#ccc5b9", tertiary: "#eb5e28" },
       backgroundImage: {
-        spiderman: "url('./src/assets/spiderman.jpg')",
+        ironman: "url('./src/assets/ironman.jpg')",
       },
     },
   },
