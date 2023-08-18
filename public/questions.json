@@ -3,42 +3,42 @@
     "id": 1,
     "question": "اولین فیلم Iron Man با چه سالی آغاز شد ؟",
     "options": ["2005", "2008", "2010", "2012"],
-    "currect": 2,
+    "correct": 2,
     "picName": "ironman"
   },
   {
     "id": 2,
     "question": "سپر کاپیتان آمریکا از چه ساخته شده است؟",
     "options": ["آمانتانیم", "ویبرانیوم", "پرومتیوم", "کاربنیاد"],
-    "currect": 2,
-    "picName": "captain.jpg"
+    "correct": 2,
+    "picName": "captain"
   },
   {
     "id": 3,
     "question": "چه کسی توسط لوکی در انتقامجویان کشته می شود؟",
     "options": ["ماریا هیل", "کولسون", "نیک فیوری", "اریک سلویگ"],
-    "currect": 2,
+    "correct": 2,
     "picName": "loki.jpg"
   },
   {
     "id": 4,
     "question": " نام چکش ثور چیست؟",
     "options": ["وانیر", "مجلنیر", "آصیر", "متولد"],
-    "currect": 2,
+    "correct": 2,
     "picName": "thor.jpg"
   },
   {
     "id": 5,
     "question": "نام واقعی پلنگ سیاه چیست؟",
     "options": ["تی چالا", "مباکو", "N'Jadaka", "نوبو"],
-    "currect": 2,
+    "correct": 2,
     "picName": "blackpanther.jpg"
   },
   {
     "id": 6,
     "question": "پیتر پارکر از همکلاسی های خود در Spider-Man: Homecoming چه مکانی را نجات می دهد؟",
     "options": ["2005", "2008", "2010", "2012"],
-    "currect": 2,
+    "correct": 2,
     "picName": "ironman.jpg"
   },
   {
@@ -50,14 +50,14 @@
       "کوه راشمور",
       "پل گلدن گیت"
     ],
-    "currect": 2,
+    "correct": 2,
     "picName": "ironman.jpg"
   },
   {
     "id": 8,
     "question": " قبل از تبدیل شدن به ویژن ، نام باتری AI Iron Man چیست؟",
     "options": ["خانه", "جارویس", "تأیید شده", "مارین"],
-    "currect": 2,
+    "correct": 2,
     "picName": "ironman.jpg"
   },
   {
@@ -69,14 +69,14 @@
       "جراح تروما",
       "جراح پلاستیک"
     ],
-    "currect": 2,
+    "correct": 2,
     "picName": "ironman.jpg"
   },
   {
     "id": 10,
     "question": "اولین فیلم Iron Man با چه سالی آغاز شد و فیلم سینمایی جهان مارول را آغاز کرد؟",
     "options": ["2005", "2008", "2010", "2012"],
-    "currect": 2,
+    "correct": 2,
     "picName": "ironman.jpg"
   }
 ]
