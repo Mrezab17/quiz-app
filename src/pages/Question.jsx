@@ -31,9 +31,9 @@ const Question = (props) => {
 
   return (
     <div
-      className={`aspect-video w-screen h-screen bg-[url('../assets/ironman.jpg')] bg-cover sm:bg-cover bg-right flex flex-col space-y-3 items-center justify-center`}
+      className={`aspect-video w-screen h-screen bg-[url('../assets/ironman.jpg')] bg-cover sm:bg-cover bg-right flex flex-col space-y-5 items-center justify-center`}
     >
-      <div className="h-1/2 w-7/12 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-primary flex flex-col px-3 space-y-2.5 pt-2">
+      <div className="h-2/3 sm:h-1/2 w-9/12 sm:w-7/12 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-primary flex flex-col px-3 space-y-3 pt-2">
         <QuestionRow>{question}</QuestionRow>
         {options.map((option, index) => (
           <AnswerRow
