@@ -4,17 +4,18 @@ import QuestionRow from "../components/QuestionRow";
 import AnswerRow from "../components/AnswerRow";
 import NavigationRow from "../components/NavigationRow";
 import ResetButton from "../components/ResetButton";
+import Results from "../components/Results";
 
 import { useDispatch, useSelector } from "react-redux";
 import { setAnswer } from "../store/answeredQuestionsSlice";
 import { useEffect, useState } from "react";
+import useResults from "../hooks/useResults";
 
 const Question = (props) => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const currentAnswer = useSelector(
-    (state) => state.answeredQuestions.items[id - 1]
-  );
+  const answers = useSelector((state) => state.answeredQuestions.items);
+  const currentAnswer = answers[id - 1];
 
   const currentQuestion = props.questions[id - 1];
   const currentCorrect = currentQuestion.correct;
@@ -24,6 +25,11 @@ const Question = (props) => {
   const [imageStyle, setImageStyle] = useState(
     "bg-[url('../assets/" + currentBg + "')]"
   );
+
+  const { score, isFinished } = useResults({
+    questions: props.questions,
+    answers: answers,
+  });
 
   useEffect(() => {
     setImageStyle("bg-[url('../assets/" + currentBg + "')]");
@@ -51,6 +57,7 @@ const Question = (props) => {
         <NavigationRow currentPage={id} />
       </div>
       <ResetButton />
+      {isFinished && <Results score={score} />}
     </div>
   );
 };
