@@ -4,14 +4,14 @@
     "question": "اولین فیلم Iron Man با چه سالی آغاز شد ؟",
     "options": ["2005", "2008", "2010", "2012"],
     "correct": 2,
-    "picName": "ironman"
+    "picName": "ironman.jpg"
   },
   {
     "id": 2,
     "question": "سپر کاپیتان آمریکا از چه ساخته شده است؟",
     "options": ["آمانتانیم", "ویبرانیوم", "پرومتیوم", "کاربنیاد"],
     "correct": 2,
-    "picName": "captain"
+    "picName": "captain.jpg"
   },
   {
     "id": 3,

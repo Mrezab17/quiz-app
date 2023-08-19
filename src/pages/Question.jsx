@@ -7,6 +7,7 @@ import ResetButton from "../components/ResetButton";
 
 import { useDispatch, useSelector } from "react-redux";
 import { setAnswer } from "../store/answeredQuestionsSlice";
+import { useEffect, useState } from "react";
 
 const Question = (props) => {
   const { id } = useParams();
@@ -17,8 +18,16 @@ const Question = (props) => {
 
   const currentQuestion = props.questions[id - 1];
   const currentCorrect = currentQuestion.correct;
+  const currentBg = currentQuestion.picName;
   const question = currentQuestion.question;
   const options = currentQuestion.options;
+  const [imageStyle, setImageStyle] = useState(
+    "bg-[url('../assets/" + currentBg + "')]"
+  );
+
+  useEffect(() => {
+    setImageStyle("bg-[url('../assets/" + currentBg + "')]");
+  }, [currentBg]);
 
   return (
     <div
