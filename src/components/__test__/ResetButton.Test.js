@@ -1,7 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
-import "@testing-library/jest-dom";
 import "intersection-observer";
 import ResetButton from "../ResetButton";
 
