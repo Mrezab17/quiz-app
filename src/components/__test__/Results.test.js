@@ -3,7 +3,8 @@ import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 import "@testing-library/jest-dom";
 import "intersection-observer";
-import Results from "../components/Results";
+import Results from "../Results";
+
 describe("Results Monitor ", () => {
   test("Bad Results", () => {
     render(<Results score={4}></Results>);
