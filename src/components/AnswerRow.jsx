@@ -12,6 +12,7 @@ const AnswerRow = (props) => {
   }, [props]);
   return (
     <div
+      data-testid="answer-element"
       className={`flex flex-row  h-10 w-full rounded-sm items-center bg-black text-white  px-2 ${
         disabled
           ? ""

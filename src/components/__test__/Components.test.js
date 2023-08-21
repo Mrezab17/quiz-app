@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, mount, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 import "@testing-library/jest-dom";
@@ -7,6 +7,8 @@ import { expect, jest, test } from "@jest/globals";
 import Results from "../Results";
 import ResetButton from "../ResetButton";
 import NavigationRow from "../NavigationRow";
+import QuestionRow from "../QuestionRow";
+import AnswerRow from "../AnswerRow";
 
 import { Provider } from "react-redux";
 import store from "../../store/store";
@@ -56,7 +58,7 @@ describe("ResetButton Visibility and Functionality ", () => {
     );
 
     const buttonElement = screen.getByText(/شروع دوباره/i);
-    userEvent.click(buttonElement);
+    userEvent.hover(buttonElement);
 
     const expectedAnswers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0].toString();
     const currentAnswers = store.getState().answeredQuestions.items.toString();
@@ -74,5 +76,60 @@ describe("Navigation Buttons Visibility and Functionality ", () => {
     render(<NavigationRow />, { wrapper: BrowserRouter });
     const buttonElement = screen.getByText(/سوال قبل/i);
     expect(buttonElement).toBeInTheDocument();
+  });
+});
+
+describe("QuestionRow ", () => {
+  test("Showing Question :", () => {
+    const question = "سپر کاپیتان آمریکا از چه ساخته شده است؟";
+    render(<QuestionRow>{question}</QuestionRow>);
+    const showElement = screen.getByText(question);
+    expect(showElement).toBeInTheDocument();
+  });
+  test("Question Page Number ", () => {
+    const number = 3;
+    render(<QuestionRow number={3}>{}</QuestionRow>);
+    const showElement = screen.getByText(number + "/10");
+    expect(showElement).toBeInTheDocument();
+  });
+});
+
+describe("AnswerRow ", () => {
+  test("Unselected Answer is Black", () => {
+    const { container } = render(<AnswerRow isSelected={false} />);
+    const answerElement = container.getElementsByClassName("bg-black");
+
+    expect(answerElement.length).toBe(1);
+  });
+  test("Selected Wrong Answer is Red", () => {
+    const { container } = render(
+      <AnswerRow isSelected={true} isCorrect={false} />
+    );
+    const answerElement = container.getElementsByClassName("bg-red-600");
+
+    expect(answerElement.length).toBe(1);
+  });
+  test("Correct Answer is Green", () => {
+    const { container } = render(
+      <AnswerRow disabled={true} isCorrect={true} />
+    );
+    const answerElement = container.getElementsByClassName("bg-green-600");
+
+    expect(answerElement.length).toBe(1);
+  });
+  test("Disabled Answer Cant be Hovered", () => {
+    const { container } = render(<AnswerRow disabled={true} />);
+    const answerElement = container.getElementsByClassName("hover:bg-gray-100");
+    expect(answerElement.length).toBe(0);
+  });
+  test("Not Disabled Answer Can be Hovered", () => {
+    const { container } = render(<AnswerRow disabled={false} />);
+    const answerElement = container.getElementsByClassName("hover:bg-gray-100");
+    expect(answerElement.length).toBe(1);
+  });
+  test("Disabled Answer Cant be Hovered", () => {
+    const { container } = render(<AnswerRow disabled={true} />);
+    const answerElement = container.getElementsByClassName("hover:bg-gray-100");
+    expect(answerElement.length).toBe(0);
   });
 });
