@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-const AnswerRow = (props) => {
+const NavigationRow = (props) => {
   const currentPage = props.currentPage;
   const navigate = useNavigate();
   const prevHandler = () => {
@@ -33,4 +33,4 @@ const AnswerRow = (props) => {
   );
 };
 
-export default AnswerRow;
+export default NavigationRow;

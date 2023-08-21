@@ -3,13 +3,17 @@ import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 import "@testing-library/jest-dom";
 import "intersection-observer";
+import { expect, jest, test } from "@jest/globals";
 import Results from "../Results";
 import ResetButton from "../ResetButton";
+import NavigationRow from "../NavigationRow";
 
 import { Provider } from "react-redux";
 import store from "../../store/store";
 import { persistor } from "../../store/store";
 import { PersistGate } from "redux-persist/integration/react";
+
+import { BrowserRouter } from "react-router-dom";
 
 describe("Results Monitor ", () => {
   test("Bad Results", () => {
@@ -57,5 +61,18 @@ describe("ResetButton Visibility and Functionality ", () => {
     const expectedAnswers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0].toString();
     const currentAnswers = store.getState().answeredQuestions.items.toString();
     expect(currentAnswers).toBe(expectedAnswers);
+  });
+});
+
+describe("Navigation Buttons Visibility and Functionality ", () => {
+  test("Next Button Visibility", () => {
+    render(<NavigationRow />, { wrapper: BrowserRouter });
+    const buttonElement = screen.getByText(/سوال بعدی/i);
+    expect(buttonElement).toBeInTheDocument();
+  });
+  test("Prev Button Visibility", () => {
+    render(<NavigationRow />, { wrapper: BrowserRouter });
+    const buttonElement = screen.getByText(/سوال قبل/i);
+    expect(buttonElement).toBeInTheDocument();
   });
 });
